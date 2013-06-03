@@ -1,0 +1,43 @@
+@import constants
+
+body
+  font-family: 'Noto Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+
+body a:hover
+  text-decoration: none
+
+abbr[title]
+  border-bottom: inherit
+  cursor: inherit
+
+.btn-group
+  a
+    color: inherit
+
+.btn.pull-right
+  margin-left: 8px
+
+.navbar-inverse
+  .brand
+    color: $headerLinkColor
+  .nav-collapse
+    .nav >
+      li >
+        a
+          color: $headerLinkColor
+          &:hover
+            background-color: inherit
+            color: white
+  .nav >
+    li
+      > a
+        color: $headerLinkColor
+      a
+        border-radius: 6px
+    li.active >
+      a, a:hover, a:focus
+        color: white
+        background-color: $headerActiveBackgroundColor
+  .navbar-inner
+    background-color: $headerBackgroundColor
+    background-image: inherit

@@ -1,0 +1,36 @@
+defaults: &defaults
+  secret_token: 21813d63edc7c312a78191a931548efb1ef07805bd54f7d8935287b8d5f5bb851d5755dd831f0c2d50156ac312c728b4b15dc5d6d884ae5b25506453bbfed801
+  omnom:
+    run_scheduler_on_web_server: true
+    facebook: 
+      default:
+        web_auth_email: 
+        web_auth_password: 
+    github: 
+      default:
+        atom: 
+    google_analytics:
+      base:
+        client_id: 
+        client_secret: 
+        oauth_token: 
+        oauth_refresh_token: 
+    instagram: 
+      default:
+        web_auth_username: 
+        web_auth_password: 
+    twitter:
+      base:
+        consumer_key: 
+        consumer_secret: 
+        oauth_token: 
+        oauth_token_secret: 
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

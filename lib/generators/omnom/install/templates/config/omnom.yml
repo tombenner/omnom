@@ -1,0 +1,29 @@
+defaults: &defaults
+  secret_token: <%= ENV['SECRET_TOKEN'] %>
+  omnom:
+    run_scheduler_on_web_server: <%= ENV['OMNOM_RUN_SCHEDULER_ON_WEB_SERVER'] %>
+    facebook:
+      default:
+        web_auth_email: <%= ENV['OMNOM_FACEBOOK_WEB_AUTH_EMAIL'] %>
+        web_auth_password: <%= ENV['OMNOM_FACEBOOK_WEB_AUTH_PASSWORD'] %>
+    github: 
+      default:
+        atom: <%= ENV['OMNOM_GITHUB_FEED_ATOM'] %>
+    instagram:
+      default:
+        web_auth_username: <%= ENV['OMNOM_INSTAGRAM_WEB_AUTH_USERNAME'] %>
+        web_auth_password: <%= ENV['OMNOM_INSTAGRAM_WEB_AUTH_PASSWORD'] %>
+    twitter:
+      consumer_key: <%= ENV['OMNOM_TWITTER_CONSUMER_KEY'] %>
+      consumer_secret: <%= ENV['OMNOM_TWITTER_CONSUMER_SECRET'] %>
+      oauth_token: <%= ENV['OMNOM_TWITTER_OAUTH_TOKEN'] %>
+      oauth_token_secret: <%= ENV['OMNOM_TWITTER_OAUTH_TOKEN_SECRET'] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

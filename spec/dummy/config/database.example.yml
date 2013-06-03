@@ -1,0 +1,21 @@
+# Please make sure that your database allows for multi-threaded access (most SQLite setups won't work)
+
+defaults: &defaults
+  adapter: postgresql
+  encoding: utf8
+  pool: 20
+  host: localhost
+  username: postgres
+  password:
+
+development:
+  <<: *defaults
+  database: omnom_development
+
+test:
+  <<: *defaults
+  database: omnom_test
+
+production:
+  <<: *defaults
+  database: omnom_production

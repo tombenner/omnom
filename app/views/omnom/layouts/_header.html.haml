@@ -1,0 +1,18 @@
+%div.navbar.navbar-inverse.navbar-responsive-collapse
+  %div.navbar-inner
+    %button.btn.btn-navbar{'type' => 'button', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %div.nav-collapse.collapse
+      %ul.nav
+        - Omnom.feeds.values.each do |feed|
+          %li{class: feed.key == @feed_key ? 'active' : ''}= link_to(feed.title, omnom.feed_path(feed.key))
+      %div.nav.pull-right
+        - if Rails.configuration.devise_enabled && user_signed_in?
+          %li
+            = link_to destroy_user_session_path, method: 'delete' do
+              %i.icon-signout.icon-large
+        - else
+          %li
+            = link_to 'Omnom', omnom.root_path, class: 'brand pull-right'

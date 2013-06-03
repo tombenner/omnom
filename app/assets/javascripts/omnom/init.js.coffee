@@ -1,0 +1,1 @@
+window.Omnom = {} unless Omnom?

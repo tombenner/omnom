@@ -1,0 +1,14 @@
+!!!
+%head
+  = render partial: 'omnom/layouts/head'
+%body
+  .container
+    - if Rails.configuration.devise_enabled && !user_signed_in?
+      = render partial: 'omnom/layouts/unauthenticated_header'
+    - else
+      = render partial: 'omnom/layouts/header'
+    - if notice
+      %p.alert= notice
+    - if alert
+      %p.alert= alert
+    = yield

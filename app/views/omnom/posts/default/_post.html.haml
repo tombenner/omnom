@@ -1,0 +1,19 @@
+%div.post.post-template-default{'data-post-id' => post.id, 'class' => ('post-is-read' if post.is_read)}
+  %div.post-right
+    %div.post-thumbnail
+      = link_to post.url do
+        = image_tag(post.thumbnail_url) if post.thumbnail_url.present? && post.thumbnail_width.present? && post.thumbnail_width >= 50 && post.thumbnail_height >= 50
+    %div.post-meta
+      %ul
+        - if post.comments_count.present? && post.comments_count > 0
+          %li
+            = link_to post.comments_url do
+              %span= post.comments_count
+              %i.icon-comments
+        %li
+          = link_to post.url do
+            = post_timeago(post)
+  %h3= link_to(post.title, post.url)
+  %div.post-description= truncate_html(post.description, length: 110) if post.description.present?
+  = post_source_icon(post)
+  %div.post-author= "#{link_to(post.author_name, post.author_url)}".html_safe if post.author_url.present?

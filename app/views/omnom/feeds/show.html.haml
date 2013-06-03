@@ -1,0 +1,12 @@
+%div.feed
+  %div.feed-header
+    = link_to '#', title: 'Refresh', class: 'refresh-posts btn btn-info pull-right', :'data-url' => omnom.feed_path(@feed_key) do
+      %i.icon-refresh.icon-large
+    = link_to '#', title: 'Mark all as read', class: 'update-is-read btn btn-success hidden pull-right', :'data-url' => omnom.update_all_posts_path do
+      %i.icon-ok.icon-large
+    %h2= @feed.title
+  %div.posts{class: "posts-template-#{@feed.template}"}
+    = render(:partial => "omnom/posts/post", :collection => @posts)
+  %div.feed-footer
+    = link_to '#', title: 'Mark all as read', class: 'update-is-read btn btn-success hidden scroll-to-top', :'data-url' => omnom.update_all_posts_path do
+      %i.icon-ok.icon-large

@@ -1,0 +1,26 @@
+@import constants
+
+@media only screen and (max-device-width: 980px), only screen and (max-width: 980px)
+  h2
+    font-size: 32px
+    line-height: 32px
+    margin-bottom: 20px
+
+  .navbar-inverse
+    .btn-navbar
+      background-color: $headerBackgroundColor
+      background-image: inherit
+      margin-bottom: 7px
+      &:hover
+        background-color: $headerActiveBackgroundColor
+    .nav-collapse
+      .nav >
+        li >
+          a
+            font-size: 22px
+      .nav.pull-right
+        text-align: right
+    .nav >
+      li
+        a
+          border-radius: 8px

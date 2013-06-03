@@ -1,0 +1,5 @@
+db/*.sqlite3
+log/*
+tmp/*
+config/omnom.local.yml
+config/database.yml

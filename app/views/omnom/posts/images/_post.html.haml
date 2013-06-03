@@ -1,0 +1,23 @@
+- if post.other.present? && post.other[:images].present?
+  - image = post.other[:images].first
+  %div.post.post-template-images{'data-post-id' => post.id, 'class' => ('post-is-read' if post.is_read)}
+    %div.post-image
+      - if image[:page_url].present?
+        = link_to image[:page_url] do
+          = image_tag(image[:image_url])
+      - else
+        = image_tag(image[:image_url])
+    %h4= link_to(post.title, post.url) if post.title != post.author_name && post.title !~ /added a new photo\.$/
+    %div.post-description= truncate_html(post.description, length: 140) if post.description.present?
+    %div.post-meta
+      %ul
+        - if post.comments_count.present? && post.comments_count > 0
+          %li
+            = link_to post.comments_url do
+              %span= post.comments_count
+              %i.icon-comments
+        %li
+          = link_to post.url do
+            = post_timeago(post)
+    = post_source_icon(post)
+    %div.post-author= "#{link_to(post.author_name, post.author_url)}".html_safe if post.author_url.present?
