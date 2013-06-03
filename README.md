@@ -441,6 +441,13 @@ Please add specs to `test/dummy`, and definitely be sure to include a spec for a
 
 Omnom uses [nikkou](https://github.com/tombenner/nikkou), which makes the extraction of useful data from HTML and XML easier. If you see any methods that could be added to nikkou, absolutely feel free to add them, too.
 
+FAQ
+---
+
+### "Omnom"?
+
+Omnom loves to eat, and it can injest and digest anything. It's **omn**iscient, **omn**ivorous, and **omn**ificent.
+
 License
 -------
 
