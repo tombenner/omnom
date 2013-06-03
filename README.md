@@ -23,13 +23,13 @@ For example, you might set up four feeds like this:
 
 Omnom is mobile-friendly and can be hosted on a single Heroku dyno for free. It looks like this:
 
-[<img src="https://raw.github.com/tombenner/omnom/doc/iphone-tech.png" width="150" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png)
-[<img src="https://raw.github.com/tombenner/omnom/doc/desktop-tech.png" width="550" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png)
+[<img src="https://raw.github.com/tombenner/omnom/master/doc/iphone-tech.png" width="150" />](https://raw.github.com/tombenner/omnom/master/doc/iphone-tech.png)
+[<img src="https://raw.github.com/tombenner/omnom/master/doc/desktop-tech.png" width="550" />](https://raw.github.com/tombenner/omnom/master/doc/desktop-tech.png)
 
 It also includes a custom view for images:
 
-[<img src="https://raw.github.com/tombenner/omnom/doc/iphone-photos.png" width="150" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png)
-[<img src="https://raw.github.com/tombenner/omnom/doc/desktop-photos.png" width="550" />](https://raw.github.com/tombenner/nui/master/Screenshots/UIScreenshot.Route.png)
+[<img src="https://raw.github.com/tombenner/omnom/master/doc/iphone-photos.png" width="150" />](https://raw.github.com/tombenner/omnom/master/doc/iphone-photos.png)
+[<img src="https://raw.github.com/tombenner/omnom/master/doc/desktop-photos.png" width="550" />](https://raw.github.com/tombenner/omnom/master/doc/desktop-photos.png)
 
 Feeds are created in Ruby, which allows for expressive filtering:
 
@@ -46,7 +46,7 @@ class TechFeed < Omnom::Feed
 end
 ```
 
-Many sources are already available (including `feed`, which reads Atom, RSS, etc), but you can also quickly create new ones. See "Sources" and "Creating Sources" below for details.
+Many sources are already available (including `feed`, which reads Atom, RSS, etc), but you can also quickly create new ones. See [Sources](#sources) and [Creating Sources](#creating-sources) for details.
 
 Installation
 ------------
@@ -61,7 +61,7 @@ cp config/omnom.local.example.yml config/omnom.local.yml # And change the secret
 rake db:setup
 ```
 
-Then simply edit your feeds in app/feeds! (See "Feeds" below.)
+Then simply edit your feeds in app/feeds! (See [Feeds](#feeds))
 
 #### Deploying to Heroku
 
@@ -111,36 +111,36 @@ class MyStartupFeed < Omnom::Feed
 end
 ```
 
-See "Sources" below for a list of available sources. Some sources (mostly just the authenticated ones, like Facebook) require configuration in omnom.local.yml. 
+See [Sources](#sources) for a list of available sources. Some sources (mostly just the authenticated ones, like Facebook) require configuration in omnom.local.yml. 
 
 You can add filters for a specific source and filters for the entire feed.
 
 Sources
 -------
 
-The following sources are available (see "Source Descriptions"):
+The following sources are available (see [Source Descriptions](#source-descriptions)):
 
-* **facebook** - The homepage feed of the authenticated user
+* **facebook** - Homepage feed of the authenticated user
 * **feed** - Supports all Atom and RSS feeds
-* **github** - The homepage feed of the authenticated user
-* **github__blog**
-* **github__blog\_section**
+* **github** - Homepage feed of the authenticated user
+* **github__blog** - Blog posts
+* **github__blog\_section** - Blog posts for a section (e.g. Meetups)
 * **google\_analytics** - Customizable metrics for the specified profile
 * **google\_analytics__pageviews** - Daily pageviews for the specified profile
 * **google\_analytics__visitors** - Daily visitors for the specified profile
-* **hacker\_news**
-* **instagram** - The homepage feed of the authenticated user
-* **reddit** - Homepage or a subreddit
+* **hacker\_news** - Homepage posts
+* **instagram** - Homepage feed of the authenticated user
+* **reddit** - Homepage or subreddit posts
 * **reddit__images** - Same as reddit, but includes full-size images
-* **slashdot**
-* **stackoverflow** - A feed of any Stackoverflow page that lists questions
-* **techcrunch**
-* **techcrunch__section**
-* **the\_next\_web**
-* **twitter__search**
-* **xkcd**
+* **slashdot** - Homepage blog posts
+* **stackoverflow** - Questions, as listed on any Stackoverflow page
+* **techcrunch** - Homepage blog posts
+* **techcrunch__section** - Blog posts for a section (e.g. Startups)
+* **the\_next\_web** - Homepage blog posts
+* **twitter__search** - Tweet results from a search
+* **xkcd** - Comics
 
-You can also create new sources *very* easily (see "Creating Sources"). Please contribute them!
+You can also create new sources *very* easily (see [Creating Sources](#creating-sources)). Please contribute them!
 
 ## Source Descriptions
 
@@ -149,7 +149,7 @@ Each source may have:
 * **Config**: Configuration values that should be set in omnom.local.yml
 * **Options**: Options that should be set in the source method's argument<br />
 (e.g. `reddit(subreddit: 'r/programming')`)
-* **Additional Data**: Additional data about the post stored in `post.other` (see "Posts" below for details)
+* **Additional Data**: Additional data about the post stored in `post.other` (see [Posts](#posts))
 
 ### facebook
 
