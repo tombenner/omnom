@@ -24,12 +24,12 @@ For example, you might set up four feeds like this:
 Omnom is mobile-friendly and can be hosted on a single Heroku dyno for free. It looks like this:
 
 [<img src="https://raw.github.com/tombenner/omnom/master/doc/iphone-tech.png" width="150" />](https://raw.github.com/tombenner/omnom/master/doc/iphone-tech.png)
-[<img src="https://raw.github.com/tombenner/omnom/master/doc/desktop-tech.png" width="550" />](https://raw.github.com/tombenner/omnom/master/doc/desktop-tech.png)
+[<img src="https://raw.github.com/tombenner/omnom/master/doc/desktop-tech.png" />](https://raw.github.com/tombenner/omnom/master/doc/desktop-tech.png)
 
 It also includes a custom view for images:
 
 [<img src="https://raw.github.com/tombenner/omnom/master/doc/iphone-photos.png" width="150" />](https://raw.github.com/tombenner/omnom/master/doc/iphone-photos.png)
-[<img src="https://raw.github.com/tombenner/omnom/master/doc/desktop-photos.png" width="550" />](https://raw.github.com/tombenner/omnom/master/doc/desktop-photos.png)
+[<img src="https://raw.github.com/tombenner/omnom/master/doc/desktop-photos.png" />](https://raw.github.com/tombenner/omnom/master/doc/desktop-photos.png)
 
 Feeds are created in Ruby, which allows for expressive filtering:
 
