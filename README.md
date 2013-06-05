@@ -61,7 +61,7 @@ cp config/omnom.local.example.yml config/omnom.local.yml # And change the secret
 rake db:setup
 ```
 
-Then simply edit your feeds in app/feeds! (See [Feeds](#feeds))
+Then simply edit your feeds in app/feeds! (See [Feeds](#feeds) for details.)
 
 #### Deploying to Heroku
 
